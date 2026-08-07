@@ -26,8 +26,6 @@ env/
 *.swo
 
 # Decompiled APK sources (too large/third-party)
-apk_decompiled/
-apk_extracted/
 
 # Test artifacts
 test_in.jpg
