@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/rad_group"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RadioButton
+        android:id="@+id/rad_1"
+        android:background="@drawable/shape_half_around_left"
+        android:text="@string/jin"
+        style="@style/weight_mannager_rad_style"/>
+    <RadioButton
+        android:id="@+id/rad_2"
+        android:background="@drawable/shape_half_around_right"
+        android:checked="true"
+        android:text="@string/gong_jin"
+        style="@style/weight_mannager_rad_style"/>
+</RadioGroup>

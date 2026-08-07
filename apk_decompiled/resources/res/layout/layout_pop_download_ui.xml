@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/fl_circle_progress"
+        android:visibility="gone"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="#ffffff"
+            android:layout_gravity="center"
+            android:id="@+id/tv_count_timer"
+            android:background="@drawable/bg_download_progress"
+            android:paddingTop="5dp"
+            android:paddingBottom="100dp"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加载中..."
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"/>
+        <yqy.yichip.ota3genbandupgrade.download.KbWithWordsCircleProgressBar
+            android:layout_gravity="center"
+            android:id="@+id/circle_progress"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+    </FrameLayout>
+</RelativeLayout>

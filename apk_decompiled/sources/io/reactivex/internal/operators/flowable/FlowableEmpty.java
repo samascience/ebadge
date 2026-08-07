@@ -1,0 +1,24 @@
+package io.reactivex.internal.operators.flowable;
+
+import defpackage.cw2;
+import io.reactivex.Flowable;
+import io.reactivex.internal.fuseable.ScalarCallable;
+import io.reactivex.internal.subscriptions.EmptySubscription;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class FlowableEmpty extends Flowable<Object> implements ScalarCallable<Object> {
+    public static final Flowable<Object> INSTANCE = new FlowableEmpty();
+
+    private FlowableEmpty() {
+    }
+
+    @Override // io.reactivex.internal.fuseable.ScalarCallable, java.util.concurrent.Callable
+    public Object call() {
+        return null;
+    }
+
+    @Override // io.reactivex.Flowable
+    public void subscribeActual(cw2 cw2Var) {
+        EmptySubscription.complete(cw2Var);
+    }
+}

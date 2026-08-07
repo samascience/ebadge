@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:tag="layout/activity_login_and_register_0"
+    android:background="@color/bg_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:tag="binding_1"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_gravity="right"
+            android:id="@+id/tv_skip"
+            android:layout_margin="20dp"
+            android:text="@string/skip"
+            style="@style/login_tv1_style"/>
+        <TextView
+            android:textSize="19sp"
+            android:textColor="@color/login_tv1_color"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/app_name"
+            android:drawableTop="@mipmap/ic_launcher"/>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:background="@color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:tabBackground="@color/home_sport_tab_bg_color"
+            app:tabIndicatorColor="@color/home_sport_tab_indi_color"
+            app:tabIndicatorHeight="2dp"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabSelectedTextColor="@color/home_sport_tab_txt_select_color"
+            app:tabTextColor="@color/home_sport_tab_txt_color"/>
+        <xfkj.fitpro.view.MyViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <include layout="@layout/include_layout_private_protocol"/>
+    </LinearLayout>
+</ScrollView>

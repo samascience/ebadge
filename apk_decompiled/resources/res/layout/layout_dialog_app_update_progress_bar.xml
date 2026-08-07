@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="3dp"
+    app:cardCornerRadius="10dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:paddingBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/update_app"
+            android:fontFamily="sans-serif-medium"/>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:paddingBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0"
+            style="?android:attr/progressBarStyleHorizontal"/>
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:gravity="center"
+            android:id="@+id/progressText"
+            android:paddingBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ready_to_download"
+            android:fontFamily="sans-serif-medium"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

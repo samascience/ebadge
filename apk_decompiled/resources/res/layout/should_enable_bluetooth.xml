@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/gray_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_bluetooth_disabled"/>
+    <TextView
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/blue_disabled"/>
+    <TextView
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/enable_bluetooth"/>
+    <com.google.android.material.button.MaterialButton
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_enable_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/enable"
+        app:backgroundTint="@color/black"/>
+</LinearLayout>

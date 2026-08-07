@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/edt_email_addr"
+        android:layout_marginTop="9dp"
+        android:hint="@string/please_input_correct_email_addr"
+        android:drawableLeft="@mipmap/signin_mailbox"
+        android:inputType="textEmailAddress"
+        style="@style/login_acount_edt_style"/>
+    <xfkj.fitpro.view.PasswordEditText
+        android:id="@+id/edt_pwd"
+        android:layout_marginTop="9dp"
+        style="@style/login_acount_edt_pwd_style"/>
+    <xfkj.fitpro.view.PasswordEditText
+        android:id="@+id/edt_pwd_agin"
+        android:layout_marginTop="9dp"
+        android:hint="@string/please_input_pwd_agin"
+        style="@style/login_acount_edt_pwd_style"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_register"
+        android:layout_marginTop="25dp"
+        android:text="@string/register"
+        style="@style/login_btn_style_2"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

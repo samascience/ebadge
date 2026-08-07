@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/shape_dialog_weight_unite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_kg"
+            android:text="@string/kg"
+            style="@style/weight_unite_dialog_font2_style"/>
+        <View
+            android:background="#fff0f1f6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:id="@+id/tv_pound"
+            android:text="@string/lb"
+            style="@style/weight_unite_dialog_font2_style"/>
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cancel"
+        android:background="@drawable/shape_dialog_weight_unite"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/cancel"
+        style="@style/weight_unite_dialog_font_style"/>
+</LinearLayout>

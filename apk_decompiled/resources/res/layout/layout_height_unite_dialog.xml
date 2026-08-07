@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/shape_dialog_weight_unite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_cm"
+            android:text="@string/cm"
+            style="@style/weight_unite_dialog_font_style"/>
+        <View
+            android:background="#fff0f1f6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:id="@+id/tv_inch"
+            android:text="@string/inch"
+            style="@style/weight_unite_dialog_font_style"/>
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cancel"
+        android:background="@drawable/shape_dialog_weight_unite"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/cancel"
+        style="@style/weight_unite_dialog_font_style"/>
+</LinearLayout>

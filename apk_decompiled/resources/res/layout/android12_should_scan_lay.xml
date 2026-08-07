@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/request_location_lay"
+    android:background="@color/gray_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bluetooth_scan"/>
+    <TextView
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="需要扫描权限"/>
+    <TextView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="从Android12.0开始，扫描设备不再需要请求定位权限，使用此权限"
+        app:titleTextColor="@color/black"/>
+    <com.google.android.material.button.MaterialButton
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_request_scan_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/granted_permission"
+        app:backgroundTint="@color/black"/>
+</LinearLayout>

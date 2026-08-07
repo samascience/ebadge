@@ -1,0 +1,134 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA1-Digest-Manifest: +wT8BE1DBOnpEl5rgsP/0qKqGI8=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA1-Digest: xptkNNzmbMLKlNtQ48Cv3nXypnE=
+
+Name: lib/armeabi-v7a/libavcodec.so
+SHA1-Digest: UcWixW4I/QYYYLICSQikgBoy1TQ=
+
+Name: lib/armeabi-v7a/libavcodec_neon.so
+SHA1-Digest: SR3F5gflg99jER/ZF4rPLawVNw0=
+
+Name: lib/armeabi-v7a/libavdevice.so
+SHA1-Digest: 8i10s6mS1WktRNiYAN6X2xPPajU=
+
+Name: lib/armeabi-v7a/libavdevice_neon.so
+SHA1-Digest: f/t8Ux0HX10videxp733gSUiBgo=
+
+Name: lib/armeabi-v7a/libavfilter.so
+SHA1-Digest: bDNnN0hH1IxNNvXggqrAfOFd2+A=
+
+Name: lib/armeabi-v7a/libavfilter_neon.so
+SHA1-Digest: q+ai1YWpbj8CQew2Y2nE7FrgXGQ=
+
+Name: lib/armeabi-v7a/libavformat.so
+SHA1-Digest: bzVe6AaW78+bEJYN+cSb1nBEgDI=
+
+Name: lib/armeabi-v7a/libavformat_neon.so
+SHA1-Digest: 9uQqidOHYG21vS/64JjJ8vK2gOA=
+
+Name: lib/armeabi-v7a/libavutil.so
+SHA1-Digest: LeS2KseXMS8TYsyl2DEepPPnrws=
+
+Name: lib/armeabi-v7a/libavutil_neon.so
+SHA1-Digest: iJIxFU63GzIZ9T1WBep7aLBsqiY=
+
+Name: lib/armeabi-v7a/libbmp-lib.so
+SHA1-Digest: KvElOtukKHwqT6H3oRGdk5F9gJE=
+
+Name: lib/armeabi-v7a/libecc256.so
+SHA1-Digest: wUZJHXlSv6vIKQSJ8x+WH3OfH20=
+
+Name: lib/armeabi-v7a/libffmpegkit.so
+SHA1-Digest: JmFexKU2Lc3rrL2mOTK/yJAuI1I=
+
+Name: lib/armeabi-v7a/libffmpegkit_abidetect.so
+SHA1-Digest: gFATyieMf1pzhGYpHTN10MNBMZw=
+
+Name: lib/armeabi-v7a/libffmpegkit_armv7a_neon.so
+SHA1-Digest: yp+TPbKqbEjQf5lX7Ckyb0VMyJY=
+
+Name: lib/armeabi-v7a/libiconv.so
+SHA1-Digest: k8VTjBxZXqo3m0BBzVqMK7XxT8U=
+
+Name: lib/armeabi-v7a/libimage_processing_util_jni.so
+SHA1-Digest: TOZCQCme+zovlPXOGjU2reOD9TQ=
+
+Name: lib/armeabi-v7a/libjl_auth.so
+SHA1-Digest: +B2U0HJ/6S07zBviKtyHm7otRwo=
+
+Name: lib/armeabi-v7a/libjl_bmp_convert.so
+SHA1-Digest: PR/OD+Cxg45plc1wnB2IGUxX+MA=
+
+Name: lib/armeabi-v7a/libjl_crc.so
+SHA1-Digest: n9Z/qEBcqKKNJ3Pc9XIaQoWhJIc=
+
+Name: lib/armeabi-v7a/libjl_enc.so
+SHA1-Digest: HjGQ8u18fFegMDSEVhIF9d7F2kI=
+
+Name: lib/armeabi-v7a/libjl_fatfs.so
+SHA1-Digest: dEZRbSckaEs5Ms2vOpY/xEo523k=
+
+Name: lib/armeabi-v7a/libjl_gif.so
+SHA1-Digest: DoFlCnUVTfh05//SMOzfkv7UzTM=
+
+Name: lib/armeabi-v7a/libjl_ota_auth.so
+SHA1-Digest: +0voTBJfs0sxjDbtT8NphhCWqV0=
+
+Name: lib/armeabi-v7a/libjl_pack_format.so
+SHA1-Digest: EnkxxqyEjwLg/3/O4KaFhYYYRy4=
+
+Name: lib/armeabi-v7a/libjl_vtool.so
+SHA1-Digest: wO+pqI+l/q2CCx/iUhsWF/7OzEg=
+
+Name: lib/armeabi-v7a/libjpeg.so
+SHA1-Digest: /5IVWhvMS86ariWHvXIKhL2WxBo=
+
+Name: lib/armeabi-v7a/liblocSDK8b.so
+SHA1-Digest: kOTr4y/D6by7H3aLUhnv5fYdQWQ=
+
+Name: lib/armeabi-v7a/libneonui_shared.so
+SHA1-Digest: Td0YQr6xWsJ0gwBraJHu7LcJTnE=
+
+Name: lib/armeabi-v7a/libneonuijni_public.so
+SHA1-Digest: L0UAkZpVMpG1liseXnKKZ3CeZeA=
+
+Name: lib/armeabi-v7a/libpl_droidsonroids_gif.so
+SHA1-Digest: fs/W++FhcOzpJTnkmYbt1uFr0TA=
+
+Name: lib/armeabi-v7a/librxffmpeg-core.so
+SHA1-Digest: /N6tdpsKr2rvEziqm1zW+MMu8zk=
+
+Name: lib/armeabi-v7a/librxffmpeg-invoke.so
+SHA1-Digest: pX6T45ekVXwWc9yxJlu5iXAu/X8=
+
+Name: lib/armeabi-v7a/librxffmpeg-player.so
+SHA1-Digest: Be9oXZFONFVniGaT30Y6pABvFIg=
+
+Name: lib/armeabi-v7a/libst_gif.so
+SHA1-Digest: 8erlXiI/LQXX15+EraxLm0nyj4c=
+
+Name: lib/armeabi-v7a/libswresample.so
+SHA1-Digest: QdfWupIq8yZszee/gyBvoqtlouI=
+
+Name: lib/armeabi-v7a/libswresample_neon.so
+SHA1-Digest: shG2vBw3cDRhoqJNp3xKL3FJBgM=
+
+Name: lib/armeabi-v7a/libswscale.so
+SHA1-Digest: gPr/OJNk9whj7v5zHwyeId49SHY=
+
+Name: lib/armeabi-v7a/libswscale_neon.so
+SHA1-Digest: Ly+MJi1Fwa4ntMwAhmTIlH2/Ip4=
+
+Name: lib/armeabi-v7a/libturbojpeg.so
+SHA1-Digest: Lvw8Sr/KOHzQJDx3sZkOKlS65hE=
+
+Name: lib/armeabi-v7a/libzbar.so
+SHA1-Digest: /8rtnLBeGu0y6Fjt+V94oiClAMo=
+
+Name: stamp-cert-sha256
+SHA1-Digest: Bs40BvDZ1xrbgQrPTD2x5w/NfHQ=
+

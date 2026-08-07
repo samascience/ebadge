@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <xfkj.fitpro.view.CircleDoubleProgressView
+        android:layout_gravity="center"
+        android:id="@+id/circle2"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        app:cdpvCirclePadding="5dp"
+        app:cdpvLabelIconColor="#f84417"
+        app:cdpvNormal1Color="#ffebe5"
+        app:cdpvNormal2Color="#fff6e5"
+        app:cdpvNormalProgressStrokeWidth="10dp"
+        app:cdpvProgress1Color="#ff4d00"
+        app:cdpvProgress2Color="#feb901"
+        app:cdpvProgressStrokeWidth="20dp"
+        app:cdpvShowArrow="false"
+        app:cdpvShowLabel="false"
+        app:cdpvShowTick="false"
+        app:cdpvSpace="6"
+        app:cdpvTurn="false"/>
+    <xfkj.fitpro.view.CircleProgressView
+        android:layout_gravity="center"
+        android:id="@+id/circle1"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        app:cpvCirclePadding="5dp"
+        app:cpvLabelIconColor="#f84417"
+        app:cpvLabelIconSize="12dp"
+        app:cpvNormalColor="#e5f4ff"
+        app:cpvNormalProgressStrokeWidth="20dp"
+        app:cpvProgress="30"
+        app:cpvProgressColor="#007afe"
+        app:cpvProgressStrokeWidth="20dp"
+        app:cpvShowArrow="false"
+        app:cpvShowLabel="false"
+        app:cpvShowTick="false"
+        app:cpvTurn="false"/>
+</merge>

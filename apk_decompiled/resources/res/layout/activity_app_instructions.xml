@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:tag="layout/activity_app_instructions_0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/app_instructions_title"
+        layout="@layout/include_title"/>
+    <WebView
+        android:id="@+id/app_instructions_webView"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:gravity="center"
+        android:id="@+id/no_instructions_textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/no_instructions"/>
+</LinearLayout>

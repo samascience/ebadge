@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:tag="layout/activity_back_permission_settings_0"
+    android:background="@color/bg_color"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/include_title"/>
+    <TextView
+        android:textColor="@color/keep_live_title_color"
+        android:background="@color/theme_color_light"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back_permission_warn"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/textColorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_signal"
+            android:layout_weight="1"/>
+        <TextView
+            android:textColor="@color/theme_color"
+            android:id="@+id/tv_device_factory_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Redmi"/>
+    </LinearLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:tabBackground="@color/home_sport_tab_bg_color"
+        app:tabIndicatorColor="@color/home_sport_tab_indi_color"
+        app:tabIndicatorHeight="2dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="@color/home_sport_tab_txt_select_color"
+        app:tabTextColor="@color/home_sport_tab_txt_color"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

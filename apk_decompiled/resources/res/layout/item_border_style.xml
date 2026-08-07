@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:background="0x7f0801f8"
+    android:padding="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+    <ImageView
+        android:id="@+id/item_border_style_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/eqt_watch"
+        android:contentDescription="@string/borders"/>
+</LinearLayout>

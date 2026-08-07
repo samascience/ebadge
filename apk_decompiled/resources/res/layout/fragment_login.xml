@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/edt_email_addr"
+        android:layout_marginTop="9dp"
+        android:hint="@string/please_input_correct_email_addr"
+        android:drawableLeft="@mipmap/signin_mailbox"
+        android:inputType="textEmailAddress"
+        style="@style/login_acount_edt_style"/>
+    <xfkj.fitpro.view.PasswordEditText
+        android:id="@+id/edt_pwd"
+        android:layout_marginTop="9dp"
+        style="@style/login_acount_edt_pwd_style"/>
+    <TextView
+        android:textSize="12sp"
+        android:textColor="#ffa4a9ac"
+        android:layout_gravity="right"
+        android:id="@+id/tv_forget_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/is_forget_password"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_login"
+        android:layout_marginTop="50dp"
+        android:text="@string/login"
+        style="@style/login_btn_style_2"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
+        <include layout="@layout/include_auth"/>
+    </LinearLayout>
+</LinearLayout>
