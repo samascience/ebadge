@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC7076A E-Badge Controller</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #121214; color: #e1e1e6; max-width: 600px; margin: 40px auto; padding: 20px; }
+        .card { background: #202024; padding: 24px; border-radius: 12px; border: 1px solid #323238; margin-bottom: 20px; }
+        h2 { margin-top: 0; color: #00b4d8; }
+        label { display: block; margin: 12px 0 6px; font-weight: 600; }
+        select, input, button { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #323238; background: #121214; color: #fff; box-sizing: border-box; }
+        button { background: #0077b6; border: none; font-weight: bold; cursor: pointer; margin-top: 12px; }
+        button:hover { background: #0096c7; }
+        #preview-container { text-align: center; margin-top: 15px; }
+        #preview { width: 200px; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #00b4d8; }
+        .toggle-box { display: flex; align-items: center; gap: 10px; margin: 15px 0; }
+        .toggle-box input { width: auto; }
+        #status { font-size: 0.9em; padding: 10px; border-radius: 6px; margin-top: 10px; display: none; }
+        .success { background: #1b4332; color: #75b798; }
+        .error { background: #48121a; color: #ea868f; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>1. Select BLE Device</h2>
+        <button onclick="scanDevices()">Scan for E-Badge</button>
+        <label for="device-select">Discovered Devices:</label>
+        <select id="device-select">
+            <option value="">-- Click Scan First --</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h2>2. Image & Clock Manager</h2>
+        
+        <div style="margin-top: 15px;">
+            <label for="write-uuid-select">Target BLE GATT Write Channel:</label>
+            <select id="write-uuid-select">
+                <option value="7e400002-b5a3-f393-e0a9-e50e24dcca9d" selected>7e400002 (Official BAJI Hardware Protocol Channel - Recommended)</option>
+                <option value="0000aa01-0000-1000-8000-00805f9b34fb">0000aa01 (JieLi Display Controller Service)</option>
+                <option value="0000ae01-0000-1000-8000-00805f9b34fb">0000ae01 (JieLi OTA Control Service)</option>
+            </select>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <div style="flex: 1;">
+                <label for="dim-select">Target Resolution:</label>
+                <select id="dim-select">
+                    <option value="240" selected>240x240 (Recommended / Hardware Native)</option>
+                    <option value="128">128x128 (Ultra Compact / Fast)</option>
+                    <option value="160">160x160 (Compact)</option>
+                    <option value="200">200x200 (Medium)</option>
+                    <option value="320">320x320 (High Resolution)</option>
+                </select>
+            </div>
+            <div style="flex: 1;">
+                <label for="quality-select">JPEG Quality:</label>
+                <select id="quality-select">
+                    <option value="75" selected>75 (Optimized YUV420 - ~1.5KB)</option>
+                    <option value="80">80 (Medium - ~3KB)</option>
+                    <option value="85">85 (High - ~6KB)</option>
+                    <option value="90">90 (Maximum - ~12KB)</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <label for="image-input">Upload Image File (Auto center-cropped & resized):</label>
+            <input type="file" id="image-input" accept="image/*" onchange="previewImage(event)">
+        </div>
+
+        <div id="preview-container" style="text-align: center; margin-top: 15px;">
+            <img id="preview" style="width: 200px; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #00b4d8;" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><rect width='100%' height='100%' fill='%23121214'/><text x='50%' y='50%' fill='%23505059' dominant-baseline='middle' text-anchor='middle'>Image Preview</text></svg>">
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <button style="flex: 1;" onclick="uploadImage('custom')">Send Uploaded Image</button>
+            <button style="flex: 1; background: #00b4d8;" onclick="uploadImage('test_pattern')">Send Default Test Pattern</button>
+            <button style="flex: 1; background: #7209b7;" onclick="uploadImage('official_watch')">Send Official Watch Pack</button>
+        </div>
+
+        <hr style="border-color: #323238; margin: 20px 0;">
+
+        <div class="toggle-box">
+            <input type="checkbox" id="clock-mode" onchange="toggleClockMode(this)">
+            <label for="clock-mode" style="margin:0;">Enable Live Clock Sync (Updates every 60s)</label>
+        </div>
+
+        <div id="status"></div>
+        <pre id="log-box" style="display:none; background:#18181c; color:#7ce38b; padding:12px; border-radius:6px; border:1px solid #323238; max-height:200px; overflow-y:auto; font-size:0.8em; font-family:monospace; margin-top:10px;"></pre>
+    </div>
+
+    <script>
+        let clockTimer = null;
+
+        async function scanDevices() {
+            showStatus("Scanning for Bluetooth devices...", "normal");
+            const res = await fetch("/api/scan");
+            const devices = await res.json();
+            const select = document.getElementById("device-select");
+            select.innerHTML = "";
+            
+            devices.forEach(d => {
+                const opt = document.createElement("option");
+                opt.value = d.address;
+                opt.textContent = `${d.name} (${d.address})`;
+                select.appendChild(opt);
+            });
+            showStatus(`Found ${devices.length} devices.`, "success");
+        }
+
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById('preview').src = reader.result;
+            }
+            if(event.target.files[0]) reader.readAsDataURL(event.target.files[0]);
+        }
+
+        async function uploadImage(mode = "custom") {
+            const address = document.getElementById("device-select").value;
+            if(!address) return showStatus("Please select a BLE device first.", "error");
+
+            const dim = document.getElementById("dim-select").value;
+            const quality = document.getElementById("quality-select").value;
+            const writeUuid = document.getElementById("write-uuid-select").value;
+
+            const formData = new FormData();
+            formData.append("address", address);
+            formData.append("mode", mode);
+            formData.append("dim", dim);
+            formData.append("quality", quality);
+            formData.append("write_uuid", writeUuid);
+
+            if(mode === "custom") {
+                const fileInput = document.getElementById("image-input");
+                if(!fileInput.files[0]) return showStatus("Please select an image file.", "error");
+                formData.append("image", fileInput.files[0]);
+            }
+
+            showStatus("Processing & Transferring over BLE...", "normal");
+            const logBox = document.getElementById("log-box");
+            logBox.style.display = "block";
+            logBox.textContent = "Connecting to device...\n";
+
+            try {
+                const res = await fetch("/api/upload", { method: "POST", body: formData });
+                const data = await res.json().catch(() => null);
+                
+                if (data && data.logs && data.logs.length > 0) {
+                    logBox.textContent = data.logs.join("\n");
+                    logBox.scrollTop = logBox.scrollHeight;
+                }
+
+                if (res.ok && data && data.status === "success") {
+                    showStatus(`Successfully synced to ${data.slot} (${data.size} bytes)`, "success");
+                } else if (data && data.message) {
+                    showStatus(`Error: ${data.message}`, "error");
+                } else {
+                    showStatus(`Server Error (Status ${res.status}): ${res.statusText}`, "error");
+                }
+            } catch(e) {
+                showStatus(`Communication Error: ${e.message || "Failed to communicate with server."}`, "error");
+            }
+        }
+
+        function toggleClockMode(checkbox) {
+            if(checkbox.checked) {
+                showStatus("Clock mode enabled. Syncing every minute...", "success");
+                uploadImage("clock"); // Immediate sync
+                clockTimer = setInterval(() => uploadImage("clock"), 60000);
+            } else {
+                clearInterval(clockTimer);
+                showStatus("Clock mode disabled.", "normal");
+            }
+        }
+
+        function showStatus(msg, type) {
+            const el = document.getElementById("status");
+            el.style.display = "block";
+            el.textContent = msg;
+            el.className = type === "error" ? "error" : type === "success" ? "success" : "";
+        }
+    </script>
+</body>
+</html>
